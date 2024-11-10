@@ -1,0 +1,58 @@
+// 
+// _table.scss
+// 
+
+.table {
+  th {
+    font-weight: $font-weight-bold;
+    font-size: 13px;
+    color: #6B7280;
+    border-bottom-color: #EFF2F7;
+    background-color: #f9fafb;
+    text-transform: uppercase;
+  }
+
+  td {
+    font-size: 13px;
+    color: $gray-700;
+    border-bottom-color: #EFF2F7;
+  }
+}
+
+.checkbox-actions {
+  max-height: 0;
+  overflow: hidden;
+  transition: all .3s ease-in-out;
+
+  &.show {
+    max-height: 120px;
+  }
+}
+
+.table-dark > :not(:last-child) > :last-child > * {
+  border-bottom-color: $table-dark-border-color;
+}
+
+.table-head {
+  border-bottom: 1px solid #EFF2F7;
+  padding: 12px 16px 0;
+}
+
+.table-body {
+  padding: 12px 16px 8px;
+}
+
+
+.table-bordered {
+  border: $table-border-width solid $table-border-color;
+}
+
+.table-nowrap {
+  th, td {
+    white-space: nowrap;
+  }
+}
+
+.table > :not(:first-child) {
+  border-top: 0;
+}

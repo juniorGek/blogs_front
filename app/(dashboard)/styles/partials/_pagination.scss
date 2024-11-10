@@ -1,0 +1,55 @@
+// 
+// _pagination.scss
+// 
+
+// Pagination rounded (Custom)
+
+.pagination-tab {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  .left-tab {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 12px;
+    color: #6B7280;
+
+    .form-control {
+      height: 30px;
+      padding: 5px 10px;
+    }
+  }
+}
+
+
+.pagination {
+  margin-bottom: 0;
+  flex-wrap: wrap;
+  .page-item {
+    margin-bottom: 12px;
+    .page-link {
+      color: #6B7280;
+      font-size: 14px;
+      &.active {
+        background-color: $blue-500;
+        color: #fff;
+      }
+    }
+
+
+    &:first-child {
+      .page-link {
+        border-top-left-radius: 0.25rem;
+        border-bottom-left-radius: 0.25rem;
+      }
+    }
+    &:last-child {
+      .page-link {
+        border-top-right-radius: 0.25rem;
+        border-bottom-right-radius: 0.25rem;
+      }
+    }
+  }
+}

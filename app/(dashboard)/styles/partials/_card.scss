@@ -1,0 +1,108 @@
+// 
+// _card.scss
+// 
+
+.card {
+  margin-bottom: $grid-gutter-width;
+  box-shadow: $box-shadow;
+  border-radius: 4px !important;
+  border: none;
+
+  .title {
+    font-size: 15px;
+    padding: 16px 20px 12px;
+    font-weight: $font-weight-semibold;
+    color: $body-color;
+    border-bottom: 1px solid $border-color;
+  }
+
+  .body {
+    padding: 12px 20px;
+
+    .btn {
+      margin-bottom: 8px !important;
+    }
+  }
+}
+
+.card-body {
+  padding: 28px;
+}
+
+.card-drop {
+  color: $body-color;
+}
+
+.card-title {
+  font-size: 15px;
+  margin: 0 0 7px 0;
+  font-weight: $font-weight-semibold;
+}
+
+.card-title-desc {
+  color: $card-title-desc;
+  margin-bottom: 24px;
+}
+
+.ant-modal-content {
+  padding: 0 !important;
+
+  .ant-modal-header {
+    padding: 16px 20px 12px;
+    border-bottom: 1px solid $border-color;
+    margin-bottom: 0 !important;
+
+    .ant-modal-title {
+      font-size: 15px;
+      font-weight: $font-weight-semibold;
+      color: $body-color;
+    }
+  }
+
+  .ant-modal-body {
+    padding: 12px 20px !important;
+
+    .btn {
+      margin-bottom: 8px !important;
+    }
+  }
+
+}
+
+.gallery-card {
+  border: 1px solid $border-color;
+  margin-bottom: 1.5rem;
+  border-radius: 4px;
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+
+  .options {
+    position: absolute;
+    right: .5rem;
+    top: .5rem;
+  }
+
+
+
+  .image {
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    img {
+      max-height: 100%;
+      max-width: 100%;
+    }
+  }
+  .title {
+    padding: 0 !important;
+    font-size: 12px!important;
+    text-align: left;
+    border-bottom: 0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}

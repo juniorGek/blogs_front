@@ -1,0 +1,342 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Inter&family=Lato:ital@1&family=Lexend&family=Noto+Sans&display=swap');
+
+.container {
+  max-width: 1320px;
+  margin: auto;
+
+  @media screen and (max-width: 1320px) {
+    padding: 0 20px;
+  }
+
+  @media screen and (max-width: 1280px) {
+    padding: 0 30px;
+  }
+  @media screen and (max-width: 767px) {
+    padding: 0 15px;  
+  }
+}
+@media (min-width: 768px) {
+  .container-md {
+    width: 100%;
+    max-width: 1320px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+
+
+@responsive {
+  .header_1 {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 44px;
+    font-weight: 600;
+    line-height: 60px;
+    letter-spacing: 0em;
+  }
+}
+
+
+.header_2 {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 38px;
+  letter-spacing: 0em;
+
+}
+
+.header_3 {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: 0em;
+}
+
+.header_4 {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+
+}
+
+.paragraph_1 {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0em;
+}
+
+.paragraph_2 {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+
+}
+
+//   /* the slides */
+//   .slick-slide {
+//     margin: 0 27px;
+// }
+
+// /* the parent */
+// .slick-list {
+//     margin: 0 -27px;
+// }
+.slick-slide>div {
+  margin: 0 10px;
+}
+
+.slick-list {
+  margin: 0 -10px;
+}
+
+// .ant-switch-checked {
+//   background-color: red !important;
+// }
+
+.ant-switch {
+  background-color: gray;
+}
+.ant-switch-checked{
+  background-color: #FD4B5F !important;
+
+}
+.ant-btn {
+  color: black;
+  border: 1px solid rgb(192, 192, 192) !important;
+}
+.ant-btn:hover{
+  border: 1px solid transparent !important;
+}
+
+.ant-btn-default:not(:disabled):not(.ant-btn-disabled):hover {
+  color: white;
+  background-color: #FD4B5F;
+}
+
+.swiper-tabbar {
+  .swiper-slide {
+    overflow: visible;
+    width: auto;
+    white-space: nowrap;
+  }
+}
+
+.lung-select {
+  color: white;
+  .custom-select .ant-select-arrow {
+    color: white !important;
+    .ant-select-selection-item{
+      color: white !important;
+    }
+  }
+  :where(.css-dev-only-do-not-override-pr0fja).ant-select-single .ant-select-selector {
+    color: white !important;
+  }
+  .ant-select-selection-item {
+    color: white !important;
+    
+  }
+  .ant-select-selector {
+    padding: 0;
+  }
+}
+
+
+// :where(.css-dev-only-do-not-override-pr0fja).ant-input-search >.ant-input-group >.ant-input-group-addon:last-child .ant-input-search-button:not(.ant-btn-primary) {
+//   box-shadow: none;
+// }
+
+.ant-input-search>.ant-input-group>.ant-input-group-addon:last-child .ant-input-search-button:not(.ant-btn-primary) {
+  color: #E5E5E5;
+}
+
+:where(.css-dev-only-do-not-override-pr0fja).ant-input:focus,
+:where(.css-dev-only-do-not-override-pr0fja).ant-input-focused {
+  border-color: white;
+}
+
+.nav-input {
+  .ant-input {
+    background-color: #0F172A;
+    color: white;
+  }
+
+  .ant-input-search .ant-input:hover{
+    border-color: white !important;
+  }
+
+  .ant-input-search .ant-input:focus {
+    border-color: white;
+  }
+
+  .ant-input-search-button:not(.ant-btn-primary):hover {
+    color: #FD4B5F !important;
+    border-color: #FD4B5F !important;
+  }
+}
+
+.Featured_Video {
+  @media screen and (max-width: 768px) {
+    .paragraph_1 {
+      font-size: 13px;
+    }
+
+  }
+}
+
+.custom_shadow {
+  box-shadow: 0px 4px 25px -1px rgba(0, 0, 0, 0.20);
+}
+// .ant-form-item-control-input-content input:focus{
+//   border: 1px solid #969696 !important;
+// }
+
+.btn-submit {
+  @apply hover:bg-Primary_Color duration-300 px-4 py-1 rounded-md border-2 border-Primary_Color hover:text-white
+}
+
+.story-modal{
+  width: 100vw;
+  height: 100vh;
+}
+
+.autoplay-progress {
+  position: absolute;
+  top: 0;
+  right: 16px;
+  bottom: 16px;
+  z-index: 10;
+  // width: 48px;
+  width: 100% !important;
+  font-weight: bold;
+  color: #FD4B5F;
+}
+
+.autoplay-progress svg {
+  --progress: 0;
+  z-index: 10;
+  width: 100%  !important;
+  stroke-width: 4px;
+  stroke: #FD4B5F;
+  fill: none;
+  transform: rotate(-90deg);
+  transform-origin: center;
+  stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+  stroke-dasharray: 125.6;
+}
+
+.story-container {
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+
+.anserForm .ant-modal-content {
+  @apply dark:bg-[#0F172A]  #{!important}
+}
+
+.anserForm .ant-modal-header {
+  @apply dark:bg-[#0F172A] dark:text-white #{!important}
+}
+.anserForm .ant-modal-title,.anserForm .ant-upload,.anserForm .ant-form label,.anserForm .ant-modal-close-icon,.anserForm .btn-submit{
+  @apply text-black dark:text-white #{!important} 
+}
+.ant-spin-dot-item{
+  @apply bg-Primary_Color #{!important}
+}
+.question2 .ant-card-body{
+  @apply lg:p-8 p-3 #{!important}
+}
+
+.poll-custom-progrss.ant-progress-bg{
+  @apply  bg-green-500 #{!important}
+}
+.ant-progress .ant-progress-text{
+  @apply  text-white #{!important}
+}
+.ant-form-item-control-input-content {
+  @apply flex items-center gap-4 #{!important}
+}
+
+input#question {
+  padding: 5px 20px!important;
+  width: 100%!important;
+  border-radius: 5px;
+}
+
+
+
+.custom-poll.ant-radio-group.ant-radio-group-outline {
+  width: 100%!important;
+}
+
+.description {
+    width: 100%; /* Set width to 100% of its container */
+    word-wrap: break-word; /* Enable word wrapping */
+    @apply max-w-[250px] md:max-w-[500px] #{!important}
+}
+
+
+
+
+.button {
+  @apply  text-white border-none px-3 py-1 rounded mr-2 cursor-pointer flex items-center transition duration-300 ease-in-out;
+}
+
+.button:hover {
+  @apply bg-red-600; /* Adjust as needed */
+}
+
+.icon {
+  @apply mr-2;
+}
+
+.ant-progress .ant-progress-text {
+  @apply dark:text-white text-black #{!important}
+}
+.jodit-react-container{
+  width: 100%!important;
+}
+
+.ant-divider-plain.ant-divider-with-text::before, .ant-divider-plain.ant-divider-with-text::after {
+  @apply border-t-gray-300 dark:border-t-gray-700 #{!important}
+}
+
+
+.rdw-link-modal{
+  @apply dark:bg-BG_Color #{!important}
+}
