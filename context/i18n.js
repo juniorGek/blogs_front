@@ -16,7 +16,7 @@ export const initI18n = () => {
 
     useEffect(() => {
         (async () => {
-            let {data} = await axios.get(process.env.backend_url + 'api/language/translations')
+            let {data} = await axios.get(`${process.env.backend_url}/api/language/translations`)
             setLanguages(data?.data?.map(d => {
                 translations[d.code] = d.translation
                 return {

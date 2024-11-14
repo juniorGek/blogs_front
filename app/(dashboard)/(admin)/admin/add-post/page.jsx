@@ -13,12 +13,14 @@ import { useI18n } from '@/context/i18n';
 import FormInput from '@/app/(dashboard)/components/forms/input';
 const JoditEditor = dynamic(() => import('jodit-react'), { ssr: false });
 
-
+import Editor from '@/app/(dashboard)/components/forms/editor';
 const Page = () => {
     const [lang2, setLang] = useState('en')
     let { lang, languages } = useI18n()
+    const [range, setRange] = useState();
+    const [lastChange, setLastChange] = useState();
     const i18n = useI18n()
-
+    const quillRef = useRef();
     const [form] = Form.useForm();
 
     const [category, getcategory] = useFetch(getAllCategoryData);
@@ -233,6 +235,16 @@ const Page = () => {
                                             config={config}
                                             onBlur={(newContent) => setContent(newContent)}
                                         />
+
+{/* <Editor
+        ref={quillRef}
+        // readOnly={readOnly}
+        // defaultValue={}
+          
+        onSelectionChange={setRange}
+        onTextChange={setLastChange}
+      /> */}
+                                        
                                     </Form.Item>
                                 ))
                             }

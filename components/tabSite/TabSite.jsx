@@ -5,6 +5,15 @@ import { useCategoryContext } from '@/context/category';
 import { useFetch } from '@/helpers/hooks';
 import TabCard from '../common/card/TabCard';
 import { Swiper, SwiperSlide } from "swiper/react";
+import { RiQuestionnaireLine } from "react-icons/ri";
+import { FaPoll } from "react-icons/fa";
+import Image from 'next/image';
+import { GrGallery } from "react-icons/gr";
+import { RiGalleryLine } from "react-icons/ri";
+import { FaRegCheckSquare } from "react-icons/fa"
+import { MdInsertChart } from "react-icons/md";
+import { message } from 'antd';
+
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -20,6 +29,7 @@ import { useI18n } from '@/context/i18n';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
 import Link from 'next/link';
+import { useUserContext } from '@/context/user';
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -30,9 +40,22 @@ const TabSite = () => {
     let { lang, languages } = useI18n()
     const i18n = useI18n()
 
+
     const { tags, tagLoading } = useCategoryContext();
     const [tagID, setTagID] = useState(null)
     const [blog, getBlog, { loading, error }] = useFetch(fetchPublishedForFrontend);
+    const [firstModalOpen, setFirstModalOpen] = useState(false);
+    const { user } = useUserContext();
+
+    const showModal = () => {
+        // console.log(user)
+        user._id ?
+            setFirstModalOpen(true) :
+            message.warning("Please login first!")
+    };
+    const handleCancel = () => {
+        setFirstModalOpen(false);
+    };
 
     const handleTag = (id) => {
         setTagID(id)
@@ -48,7 +71,45 @@ const TabSite = () => {
     }, [tagID])
 
     return (
-        <div className='pt-6 md:pt-5'>
+        <div className='pt-6 md:pt-5 p-6'>
+            {
+              tagLoading ?  
+              <Skeleton className='m-6' width={1000} height={80} />:
+              <div
+              onClick={showModal}
+              className="   dark:border-BG_Line_Color border-Light_Line_Color hover:border-[#fd4b5f] dark:!text-white w-full rounded-lg group hover:opacity-90 sm:  cursor-pointer flex flex-row gap-4 p-2 mb-[30px]  border-2"
+          >
+              <div className="flex items-center gap-2 w-[65rem]">
+
+                  <Image
+                      width={100}
+                      height={100}
+                      className="h-[40px] w-[40px] rounded-full border-2 "
+                      alt="..."
+                      src={
+                          user?.image ?
+                              user?.image :
+                              "/blank-profile.png"
+                      }
+                  />
+                  <p className="text-sm font-normal  border dark:border-BG_Line_Color border-Light_Line_Color rounded-lg w-full py-2 pl-4">
+                      {i18n?.t('An opinion or question? Share it with us!?')}
+                  </p>
+              </div>
+              <div className="flex justify-center items-center text-md w-[10rem] gap-2 dark:border-BG_Line_Color border-Light_Line_Color rounded-lg">
+              <MdInsertChart className='w-8 h-8 ' />
+              <RiGalleryLine  className='w-8 h-8 ' />
+              <FaRegCheckSquare className='w-8 h-8' />
+
+              
+              
+              
+              </div>
+          </div>
+            }
+
+           
+
 
             <div className="py-9 pr-4 container swiper-tabbar">
                 <Swiper
@@ -70,7 +131,7 @@ const TabSite = () => {
                             <Skeleton width={150} height={30} />
                             <Skeleton width={150} height={30} />
                             <Skeleton width={150} height={30} />
-                            <Link  href={'/test'} >Test</Link>
+                            <Link href={'/test'} >Test</Link>
                         </div> : tags?.map((item) => (
                             <SwiperSlide key={item?._id}>
                                 <div className='border-none outline-none' onClick={() => handleTag(item?._id)}>
@@ -132,6 +193,7 @@ const TabSite = () => {
 
 
             </div>
+
         </div>
     );
 };
